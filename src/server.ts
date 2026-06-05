@@ -100,7 +100,7 @@ app.post('/api/auth/login', (req, res) => {
 });
 
 // 3. Create a Journal Entry
-app.post('/api/journal', verifyNativeToken, async (req, res) => {
+app.post('/api/journal', async (req, res) => {
   const { raw_text } = req.body;
   if (!raw_text || typeof raw_text !== 'string') {
     res.status(400).json({ status: 'ERROR', message: 'Missing or invalid raw_text' });
